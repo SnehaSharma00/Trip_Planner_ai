@@ -8,7 +8,7 @@ def save_document(response_text: str, directory: str = "./output"):
     
     # Create markdown content with metadata header
     markdown_content = f"""# 🌍 AI Travel Plan
-
+ 
     # **Generated:** {datetime.datetime.now().strftime('%Y-%m-%d at %H:%M')}  
     # **Created by:** Atriyo's Travel Agent
 
@@ -25,7 +25,7 @@ def save_document(response_text: str, directory: str = "./output"):
         # Write to markdown file with UTF-8 encoding
         # Generate timestamp-based filename
         timestamp = datetime.datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
-        filename = f"{directory}/AI_Trip_Planner_{timestamp}.md"
+        filename = f"{directory}/Trip_Planner_ai{timestamp}.md"
 
         print(filename)
 

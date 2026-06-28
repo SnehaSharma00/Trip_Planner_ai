@@ -10,3 +10,5 @@ wheels/
 .venv
 .env
 notes.txt
+pyproject.toml
+env

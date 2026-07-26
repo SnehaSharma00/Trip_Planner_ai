@@ -4,8 +4,11 @@ import datetime
 
 # from exception.exceptions import TradingBotException
 import sys
-
-BASE_URL = "http://localhost:8000"  # Backend endpoint
+import os
+BASE_URL = os.getenv(
+    "API_URL",
+    "http://localhost:8000"
+)# Backend endpoint
 
 st.set_page_config(
     page_title="🌍 Travel Planner Agentic Application",

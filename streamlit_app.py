@@ -37,7 +37,11 @@ if submit_button and user_input.strip():
         # Show thinking spinner while backend processes
         with st.spinner("Bot is thinking..."):
             payload = {"query": user_input}
-            response = requests.post(f"{BASE_URL}/query", json=payload)
+            response = requests.post(
+                f"{BASE_URL}/query",
+                json=payload,
+                timeout=120
+)
 
         if response.status_code == 200:
             answer = response.json().get("answer", "No answer returned.")
@@ -58,5 +62,8 @@ if submit_button and user_input.strip():
         else:
             st.error(" Bot failed to respond: " + response.text)
 
+    except requests.exceptions.RequestException as e:
+        st.error(f"Unable to connect to the backend.\n\n{e}")
+    
     except Exception as e:
-        raise f"The response failed due to {e}"
+        st.error(f"The response failed due to: {e}")

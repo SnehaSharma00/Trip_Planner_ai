@@ -35,6 +35,3 @@ def save_document(response_text: str, directory: str = "./output"):
         print(f"Markdown file saved as: {filename}")
         return filename
         
-    except Exception as e:
-        print(f"Error saving markdown file: {e}")
-        return None

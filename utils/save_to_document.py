@@ -24,7 +24,8 @@ def save_document(response_text: str, directory: str = "./output"):
     try:
         # Write to markdown file with UTF-8 encoding
         # Generate timestamp-based filename
-      
+        timestamp = datetime.datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
+        filename = f"{directory}/Trip_Planner_ai{timestamp}.md"
 
         print(filename)
 
